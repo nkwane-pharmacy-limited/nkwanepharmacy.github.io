@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nkwane Pharmacy Limited</title>
+    <style>
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2a6e3f;
+    --secondary-color: #1a4d2a;
+    --accent-color: #34a853;
+    --light-color: #f8f9fa;
+    --dark-color: #333;
+    --gray-color: #6c757d;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f5f5f5;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+.logo h1 i {
+    margin-right: 10px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    font-style: italic;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 8px;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 0 100px;
+    margin-top: 70px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* About Section */
+.about {
+    background-color: white;
+}
+
+.about h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.about h2 i {
+    margin-right: 10px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    color: var(--secondary-color);
+    margin-top: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.about-text i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* Services Section */
+.services {
+    background-color: #f8f9fa;
+}
+
+.services h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.services h2 i {
+    margin-right: 10px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+}
+
+/* Staff Section */
+.staff {
+    background-color: white;
+}
+
+.staff h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.staff h2 i {
+    margin-right: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gray-color);
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.staff-card {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.staff-card:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.staff-card:hover i,
+.staff-card:hover h3 {
+    color: white;
+}
+
+.staff-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.staff-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f8f9fa;
+}
+
+.contact h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.contact h2 i {
+    margin-right: 10px;
+}
+
+.contact-content {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info h3, .contact-form h3 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    margin-right: 15px;
+    width: 20px;
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.map h3 {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.map h3 i {
+    margin-right: 10px;
+}
+
+.map-placeholder {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.fake-map {
+    height: 300px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.map-marker {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.map-marker i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-logo, .footer-links, .footer-contact {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-logo h3 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer-links h4, .footer-contact h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: var(--shadow);
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 120px 0 80px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+
+     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><sub><img src="nkwane logo.png" width="100" height="100"></sub><sup> Nkwane Pharmacy</sup></h1>
+                <p class="tagline">Tunajali afya yako</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Nyumbani</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+                    <li><a href="#services"><i class="fas fa-concierge-bell"></i> Huduma</a></li>
+                    <li><a href="#staff"><i class="fas fa-users"></i> Wafanyakazi</a></li>
+                    <li><a href="#contact"><i class="fas fa-address-book"></i> Mawasiliano</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Karibu Nkwane Pharmacy Limited</h2>
+                <p>Duka la dawa la kisasa lililopo Kahama, Mkoa wa Shinyanga. Tunatoa huduma bora za dawa na ushauri wa kitaalamu.</p>
+                <a href="#contact" class="btn">Tembelea Ofisi Yetu</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2><i class="fas fa-building"></i> Kuhusu Nkwane Pharmacy</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Karibu Nkwane Pharmacy Kituo cha huduma za Afya Kinachoongozwa na weledi, Uaminifu na Kujituma.
+                         Tangu Kuanzishwa kwake miaka sita iliyopita,Tumekuwa msitari wa mbele kutoa huduma bora za upatikanaji wa dawa,ushauri wa kitaalamu na uangalizi wa Afya kwa wateja wetu.
+                      Tunakusudia kuhakikisha kila mteja anapata huduma salama, sahihi na kwa wakati.
+                      Timu Yetu inawataalamu waliobobea katika fani ya Famasia,waliojitolea kukuhudumia kwa uangalifu na ujuzi wa kiwango cha juu.</p>
+                    <p>  Nkwane Pharmacy Limited ni duka la dawa kutoa huduma bora za afya kwa wakazi wa Kahama na maeneo jirani.
+                           Tupo katika eneo la strategi karibu na Msikiti wa Ijumaa, mkabala na Rosha Lodge.
+                            </p>
+                        <p>Tunaamini katika kutoa huduma za dawa za hali ya juu, ushauri wa kitaalamu, na ukaribu kwa wateja wetu.</p>
+                        <h3>Eneo Letu:</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Kahama, Mkoa wa Shinyanga<br>
+                        Mtaa wa Msikiti wa Ijumaa, Mkabala na Rosha Lodge</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nkwane Pharmacy Building">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2><i class="fas fa-pills"></i> Huduma Zetu</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                        <h3>Uuzaji wa Dawa</h3>
+                        <p>Tunauza dawa za aina mbalimbali za matibabu kwa bei nafuu.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Ushauri wa Kiafya</h3>
+                        <p>Mtaalamu wetu wa dawa (Mpharmasia) atakupa ushauri wa bure.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Uwasilishaji wa Dawa</h3>
+                        <p>Tunawasilisha dawa kwa wateja wetu kupitia timu ya usafirishaji.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Uchunguzi wa Msingi</h3>
+                        <p>Tunatoa huduma za kuchunguza shinikizo la damu na kiwango cha sukari.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Staff Section -->
+        <section id="staff" class="staff">
+            <div class="container">
+                <h2><i class="fas fa-users"></i> Timu Yetu</h2>
+                <p class="section-subtitle">Nkwane Pharmacy ina wafanyakazi waliohitimu na wenye uzoefu.</p>
+                <div class="staff-grid">
+                    <div class="staff-card">
+                        <i class="fas fa-user-tie"></i>
+                          <h3>msimamizi wa stoo</h3>
+                        <p>Anaongoza shughuli zote za stoo</p>
+                    </div>
+                    <div class="staff-card">
+                        <i class="fas fa-user-cog"></i>
+                       
+                        <h3>Meneja</h3>
+                        <p>Anasimamia operesheni za kila siku</p>
+                    </div>
+                    <div class="staff-card">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Mpharmasia (Daktari)</h3>
+                        <p>Mtaalamu wa dawa anayeshughulikia ushauri na kutoa dawa </p>
+                    </div>
+
+
+                     
+                           
+
+                    <div class="staff-card">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>Wakaratasi (secretaries) </h3>
+                        <p>Wanashughulikia mawasiliano na usimamizi wa rekodi</p>
+                    </div>
+
+
+                    <div class="staff-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Wasafirishaji </h3>
+                        <p>Wanahakikisha dawa zinafika kwa wateja kwa wakati</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2><i class="fas fa-address-book"></i> Mawasiliano</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Tuwasiliane</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Anwani:</strong> Kahama, Shinyanga<br>Mtaa wa Msikiti wa Ijumaa, Mkabala na Rosha Lodge</p>
+                        <p><i class="fas fa-phone"></i> <strong>Simu:</strong> +255 745 626 708  Secretary</p>
+                        <p><i class="fas fa-phone"></i> <strong>Simu:</strong> +225 769 563 244  Usafirishaji</p>
+                        <p><i class="fas fa-phone"></i> <strong>Simu:</strong> +255 742 411 878   Emergency call</p>
+                        <p><i class="fas fa-envelope"></i> <strong>Barua pepe:</strong> info@nkwanepharmacy.co.tz</p>
+                        <p><i class="fas fa-clock"></i> <strong>Masaa ya Kazi:</strong><br>
+                        Jumatatu - Ijumaa: 7:00 asubuhi - 8:00 jioni<br>
+                        Jumamosi: 7:30 asubuhi - 8:30 jioni<br>
+                        
+                        
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Tuma Ujumbe</h3>
+                        <form id="messageForm">
+                            <input type="text" placeholder="Jina lako" required>
+                            <input type="email" placeholder="Barua pepe yako" required>
+                            <input type="tel" placeholder="Nambari ya simu">
+                            <textarea placeholder="Ujumbe wako" rows="5" required></textarea>
+                            <button type="submit" class="btn">Tuma Ujumbe</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Map Placeholder -->
+                <div class="map">
+                    <h3><i class="fas fa-map-marked-alt"></i> Eneo Letu kwenye Ramani</h3>
+                    <div class="map-placeholder">
+                        <p><i class="fas fa-map-pin"></i> Kahama, Shinyanga - Mtaa wa Msikiti wa Ijumaa</p>
+                        <p>Mkabala na Rosha Lodge</p>
+                        
+
+                            <img src="locate.png" width="auto" height="auto">
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><i class="fas fa-clinic-medical"></i> Nkwane Pharmacy Limited</h3>
+                    <p>Tunajali Afya Yako</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Viungo vya Haraka</h4>
+                    <ul>
+                        <li><a href="#home">Nyumbani</a></li>
+                         <li><a href="#about">Kuhusu Sisi</a></li>
+                        <li><a href="#services">Huduma</a></li>
+                        <li><a href="#contact">Mawasiliano</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Mawasiliano</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Kahama, Shinyanga</p>
+                        <p><i class="fas fa-phone"></i> <strong>Simu:</strong> +255 745 626 708  Secretary</p>
+                        <p><i class="fas fa-phone"></i> <strong>Simu:</strong> +225 769 563 244  Usafirishaji</p>
+                        <p><i class="fas fa-phone"></i> <strong>Simu:</strong> +255 742 411 878   Emergency call</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Nkwane Pharmacy Limited | Haki zote zimehifadhiwa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+    // Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+    navUl.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navUl.classList.remove('active');
+    });
+});
+
+// Form Submission
+const messageForm = document.getElementById('messageForm');
+if (messageForm) {
+    messageForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = this.querySelector('input[type="text"]').value;
+        const email = this.querySelector('input[type="email"]').value;
+        
+        // Show success message
+        alert(`Asante ${name}! Ujumbe wako umepokelewa. Tutawasiliana nawe kupitia ${email} hivi karibuni.`);
+        
+        // Reset form
+        this.reset();
+    });
+}
+
+// Set current year in footer
+const currentYear = document.getElementById('currentYear');
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add active class to navigation links based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 100)) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Add animation to elements when they come into view
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+        }
+    });
+}, observerOptions);
+
+// Observe elements to animate
+const animateElements = document.querySelectorAll('.service-card, .staff-card, .about-image img');
+animateElements.forEach(el => observer.observe(el));
+
+// Add CSS for animation
+const style = document.createElement('style');
+style.textContent = `
+    .service-card, .staff-card, .about-image img {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .service-card.animate, .staff-card.animate, .about-image img.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
+document.head.appendChild(style);
+
+</script>
+</body>
+</html>
